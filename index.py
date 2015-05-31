@@ -601,12 +601,12 @@ def ReleaseKey(hexKeyCode):
 codeList = {
 	"up_arrow"    : 0x48,
 	"down_arrow"  : 0x50,
-	"left_arrow"  : 0x4B,
-	"right_arrow" : 0x4D,
+	"left_arrow"  : 0xE04B,
+	"right_arrow" : 0xE04D,
 	"alt"         : 0x38,
 	"ctrl"        : 0x1D,
-	"esc"         : 0x1B,
-	"enter"       : 0x48  #up_arrow
+	"esc"         : 0x01,
+	"enter"       : 0x1C  #up_arrow
 }
 
 
@@ -615,11 +615,10 @@ def setKey(key, condition):
 	print(key)
 	if(condition == 'press'):
 		code = codeList[key]
-		print(code)
 		PressKey(code)
+		
 	else:
 		ReleaseKey(codeList[key])
-		time.sleep(.02)
 		
 
 app = Flask(__name__)

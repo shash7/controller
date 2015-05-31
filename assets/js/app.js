@@ -120,10 +120,10 @@
 		sendData(data, function() {
 			vibrate(button);
 			var end = window.performance.now();
-			/*console.log('---------------------');
+			console.log('---------------------');
 			console.log(end - start);
 			console.log(data);
-			console.log('---------------------');*/
+			console.log('---------------------');
 		});
 		
 		e.preventDefault && e.preventDefault();
@@ -137,9 +137,9 @@
 		key = key || '';
 		var time = 20;
 		if(key === 'triangle' || key === 'square') {
-			time = 40;
+			time = 50;
 		} else if(key === 'x' || key === 'circle') {
-			time = 30;
+			time = 35;
 		}
 		navigator.vibrate(time);
 	}
