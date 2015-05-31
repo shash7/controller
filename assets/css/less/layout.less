@@ -1,0 +1,185 @@
+// main: lightgrid.less
+
+/* ----------------------------------------------------------------
+ * layout.less
+ * ---------------------------------------------------------------- */
+
+@gap : 8px;
+
+@triangle-color : #27AE60;
+@square-color   : #8E44AD;
+@circle-color   : #C0392B;
+@x-color        : #2980B9;
+	
+html {
+	width:100%;
+	height:100%;
+}
+
+body {
+	width:100%;
+	height: 100%;
+	
+	overflow: hidden;
+	background-color: #444;
+	background-image: url(/img/broken_noise.png);
+	background-repeat: repeat;
+}
+
+/* ----------------------------------------------------------------
+ * directional pad
+ * ---------------------------------------------------------------- */
+.directional-container {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	
+	background-color: #222;
+	border-radius: 50%;
+	padding: @gap;
+	box-sizing: border-box;
+	
+	box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.2);
+	
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);
+	perspective: 1px;
+}
+
+.directional-container .button {
+		position:absolute;
+	width:40%;
+	height:40%;
+	margin:10%;
+	
+	background-color: #f30;
+	
+	font-size: 2em;
+	color:#FFF;
+
+	border-radius: 50%;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+
+	display: inline-block;
+	border:none;
+	background-color: rgba(255,255,255,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.2);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-moz-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-ms-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-o-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+}
+
+.directional-container .button.active {
+	box-shadow: 0 0 2px 4px rgba(0,0,0,0.2);
+	background-color: #E67E22;
+}
+
+.directional-container .left {
+	bottom:0;
+	left:0;
+}
+
+.directional-container .top {
+	top:0;
+	left:0;
+}
+
+.directional-container .right {
+	top:0;
+	right:0;
+}
+
+.directional-container .bottom {
+	bottom:0;
+	right:0;
+}
+
+
+.button-container {
+	position:absolute;
+	top:0;
+	right:0;
+	height:~"calc(100% - 8px)";
+	margin: 8px;
+	
+	background-color: #222;
+	border-radius: 50%;
+	padding: @gap;
+	box-sizing: border-box;
+	
+	box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.2);
+	
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);
+	perspective: 1px;
+}
+
+.button-container .button {
+	position:absolute;
+	width:40%;
+	height:40%;
+	margin:10%;
+	
+	background-color: #f30;
+	
+	font-size: 2em;
+	color:#FFF;
+
+	border-radius: 50%;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+
+	display: inline-block;
+	border:none;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.2);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-moz-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-ms-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	-o-transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	transition: all 100ms cubic-bezier(0.215,.61,.355,1);
+	
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+}
+
+.button-container .button.active {
+	box-shadow: 0 0 2px 4px rgba(0,0,0,0.2);
+	background-color: #E67E22;
+}
+
+.button-container .square {
+	bottom:0;
+	left:0;
+	background-color: @square-color;
+}
+
+.button-container .triangle {
+	top:0;
+	left:0;
+	background-color: @triangle-color;
+}
+
+.button-container .circle {
+	top:0;
+	right:0;
+	background-color: @circle-color;
+}
+
+.button-container .x {
+	bottom:0;
+	right:0;
+	background-color: @x-color;
+}
